@@ -1,20 +1,7 @@
 package com.practice.tdd.tddpractice.vendingmachine;
 
-import lombok.Getter;
-
-@Getter
-public class VendingMachine {
-    int balance;
-
-    public void putCoin(int coin) {
-        balance += coin;
-    }
-
-    public void selectDrink(Drink drink) {
-        balance -= drink.price;
-    }
-
-    public Coin getCoins() {
+public class ChangeModule {
+    public Coin getCoin(int balance) {
         Coin coin = new Coin();
 
         // 500원

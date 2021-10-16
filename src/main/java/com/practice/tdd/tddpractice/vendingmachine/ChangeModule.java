@@ -1,6 +1,13 @@
 package com.practice.tdd.tddpractice.vendingmachine;
 
 public class ChangeModule {
+    enum COIN{
+        KRW500(500), KRW100(100), KRW(50), KRW(10);
+        private int value;
+        COIN(int value) {
+            this.value = value;
+        }
+    }
     public Coin getCoin(int balance) {
         Coin coin = new Coin();
 

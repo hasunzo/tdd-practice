@@ -17,10 +17,9 @@ public class ChangeModule {
         final int KRW50 = COIN.KRW50.value;
         final int KRW10 = COIN.KRW10.value;
 
-        balance = addCoinsToCoinSet(balance, coinSet, KRW500);
-        balance = addCoinsToCoinSet(balance, coinSet, KRW100);
-        balance = addCoinsToCoinSet(balance, coinSet, KRW50);
-        balance = addCoinsToCoinSet(balance, coinSet, KRW10);
+        for (COIN coin : COIN.values()) {
+            balance = addCoinsToCoinSet(balance, coinSet, coin.value);
+        }
 
         return coinSet;
     }

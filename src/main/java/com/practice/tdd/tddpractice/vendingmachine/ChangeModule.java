@@ -12,10 +12,10 @@ public class ChangeModule {
     public CoinSet getCoin(int balance) {
         CoinSet coinSet = new CoinSet();
 
-        final int KRW500 = 500;
-        final int KRW100 = 100;
-        final int KRW50 = 50;
-        final int KRW10 = 10;
+        final int KRW500 = COIN.KRW500.value;
+        final int KRW100 = COIN.KRW100.value;
+        final int KRW50 = COIN.KRW50.value;
+        final int KRW10 = COIN.KRW10.value;
 
         balance = addCoinsToCoinSet(balance, coinSet, KRW500);
         balance = addCoinsToCoinSet(balance, coinSet, KRW100);

@@ -17,11 +17,21 @@ public class CoinSet {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CoinSet coinSet = (CoinSet) o;
-        return Objects.equals(coins, coinSet.coins);
+    public boolean equals(Object coinSet) {
+        if (!(coinSet instanceof CoinSet)) {
+            return false;
+        }
+
+        return this.toString().equals(coinSet.toString());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (Integer coin : this.coins) {
+            builder.append(coin);
+        }
+        return builder.toString();
     }
 
     @Override

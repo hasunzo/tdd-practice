@@ -12,22 +12,20 @@ public class ChangeModule {
     public CoinSet getCoin(int balance) {
         CoinSet coinSet = new CoinSet();
 
-        final int KRW500 = COIN.KRW500.value;
-        final int KRW100 = COIN.KRW100.value;
-        final int KRW50 = COIN.KRW50.value;
-        final int KRW10 = COIN.KRW10.value;
-
+        // 넘겨받은 변수에 직접 대입이 일어나지 않도록
+        // remainChangeAmount라는 지역 변수를 지정
+        int remainBalance = balance;
         for (COIN coin : COIN.values()) {
-            balance = addCoinsToCoinSet(balance, coinSet, coin.value);
+            remainBalance = addCoinsToCoinSet(remainBalance, coinSet, coin.value);
         }
 
         return coinSet;
     }
 
-    private int addCoinsToCoinSet(int balance, CoinSet coinSet, int KRW500) {
-        while(balance >= KRW500) {
-            coinSet.add(KRW500);
-            balance -= KRW500;
+    private int addCoinsToCoinSet(int balance, CoinSet coinSet, int coinValue) {
+        while(balance >= coinValue) {
+            coinSet.add(coinValue);
+            balance -= coinValue;
         }
         return balance;
     }

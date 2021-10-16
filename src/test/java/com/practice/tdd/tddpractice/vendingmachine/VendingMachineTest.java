@@ -10,7 +10,7 @@ public class VendingMachineTest {
     @Test
     public void testReturnChangeHundred() {
         ChangeModule module = new ChangeModule();
-        Coin coins = new Coin();
+        CoinSet coins = new CoinSet();
         coins.add(100);
         assertThat(coins, is(module.getCoin(100)));
     }
@@ -20,7 +20,7 @@ public class VendingMachineTest {
     @Test
     public void testReturnChangeTen() {
         ChangeModule module = new ChangeModule();
-        Coin coins = new Coin();
+        CoinSet coins = new CoinSet();
         coins.add(100);
         coins.add(50);
         coins.add(10);

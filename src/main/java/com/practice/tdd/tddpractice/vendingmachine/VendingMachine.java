@@ -14,33 +14,33 @@ public class VendingMachine {
         balance -= drink.price;
     }
 
-    public Coin getCoins() {
-        Coin coin = new Coin();
+    public CoinSet getCoins() {
+        CoinSet coinSet = new CoinSet();
 
         // 500원
         while(balance >= 500) {
-            coin.add(500);
+            coinSet.add(500);
             balance -= 500;
         }
 
         // 100원
         while(balance >= 100) {
-            coin.add(100);
+            coinSet.add(100);
             balance -= 100;
         }
 
         // 50원
         while(balance >= 50) {
-            coin.add(50);
+            coinSet.add(50);
             balance -= 50;
         }
 
         // 10원
         while(balance >= 10) {
-            coin.add(10);
+            coinSet.add(10);
             balance -= 10;
         }
 
-        return coin;
+        return coinSet;
     }
 }

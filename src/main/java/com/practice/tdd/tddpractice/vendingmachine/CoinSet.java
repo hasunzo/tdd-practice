@@ -5,10 +5,10 @@ import lombok.Getter;
 import java.util.*;
 
 @Getter
-public class Coin {
+public class CoinSet {
     List<Integer> coins;
 
-    Coin() {
+    CoinSet() {
         coins = new ArrayList<Integer>();
     }
 
@@ -20,8 +20,8 @@ public class Coin {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Coin coin = (Coin) o;
-        return Objects.equals(coins, coin.coins);
+        CoinSet coinSet = (CoinSet) o;
+        return Objects.equals(coins, coinSet.coins);
     }
 
     @Override

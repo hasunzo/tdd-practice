@@ -29,7 +29,7 @@ public class VideoShopTest {
         customer.rentVideo(movie, 3);
 
         VideoShop videoShop = new VideoShop();
-        assertThat(2, is(videoShop.calculateTotalBonusPoint(customer)));
+        assertThat(1, is(videoShop.calculateTotalBonusPoint(customer)));
     }
 
     // 시스템이 비디오 총 대여가격을 계산한다.
